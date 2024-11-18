@@ -1,0 +1,129 @@
+.logoNetflix {
+  max-width: 100px;
+}
+.profilePic {
+  width: 30px;
+}
+
+.sliderRow {
+  white-space: nowrap;
+  padding: 20px 0;
+  position: relative;
+
+  height: 300px;
+}
+.cardSlider {
+  display: flex;
+  transition: transform 0.5s ease;
+  cursor: grab;
+}
+
+.cardSlider.dragging {
+  cursor: grabbing;
+  transition: none;
+}
+
+.cardPreview {
+  display: inline-block;
+  min-width: 300px;
+
+  transition: transform 0.5s;
+}
+.cardPreview img {
+  width: 301px;
+  height: 164px;
+}
+.cardPreview:hover {
+  cursor: pointer;
+  transition: all 1s;
+  transform: translateY(-20px) scale(1.2);
+  z-index: 1;
+}
+.navBtn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 20px 10px;
+  cursor: pointer;
+  z-index: 2;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.sliderRow:hover .navBtn {
+  opacity: 1;
+}
+.prvBtn {
+  left: 0;
+}
+
+.nxtBtn {
+  right: 0;
+}
+@media (max-width: 576px) {
+  .cardPreview {
+    min-width: 150px !important;
+  }
+  .cardPreview img {
+    object-fit: scale-down;
+    width: 150px !important;
+    padding: 0 5px !important;
+  }
+
+  .cardPreview:hover {
+    transform: none;
+  }
+  .cardPreview:hover .cardNascosta {
+    display: none !important;
+  }
+
+  .sliderRow {
+    height: auto;
+  }
+}
+
+@media (min-width: 577px) and (max-width: 768px) {
+  .cardPreview {
+    min-width: 150px;
+    min-height: 100%;
+  }
+  .cardPreview img {
+    object-fit: cover;
+  }
+}
+.testo-piccolo {
+  font-size: 0.8rem;
+}
+.nascosta {
+  opacity: 0 !important;
+  transform: translateY(20px);
+  transition: opacity 4s ease-in-out, transform 4s ease-in-out;
+}
+
+.rigaGenerale {
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+  transform: translateY(0);
+  overflow: hidden;
+}
+.cardNascosta {
+  display: none;
+}
+.cardPreview:hover .cardNascosta {
+  display: block;
+}
+/* .cardPreview:hover .imgPreview {
+  display: none;
+} */
+.imgPreview {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.cardGrande {
+  width: 100% !important;
+  height: auto !important;
+  transition: width 0.3s ease, height 0.3s ease;
+}
